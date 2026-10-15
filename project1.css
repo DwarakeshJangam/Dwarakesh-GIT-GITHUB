@@ -1,0 +1,159 @@
+
+/* ===== 1. Global Settings ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Arial, sans-serif;
+    color: #1d2d50;
+    line-height: 1.6;
+    padding: 30px;
+
+    /* iOS-inspired gradient background */
+    background: linear-gradient(
+        135deg,
+        #b9d9ff,
+        #dcd6ff,
+        #f7d9ee
+    );
+
+    min-height: 100vh;
+}
+
+/* ===== 2. Glass Effect ===== */
+header,
+section,
+footer {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 24px;
+
+    box-shadow: 0 8px 32px rgba(31, 65, 114, 0.10);
+
+    padding: 25px;
+    margin: 20px auto;
+
+    max-width: 900px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* ===== 3. Hover Animation ===== */
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(31, 65, 114, 0.16);
+}
+
+/* ===== 4. Main Heading ===== */
+header {
+    text-align: center;
+    padding: 40px 25px;
+}
+
+header h1 {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #172b55;
+}
+
+header p {
+    color: #49658f;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+/* ===== 5. Section Headings ===== */
+section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #243e70;
+}
+
+section p {
+    font-size: 16px;
+    color: #405577;
+}
+
+/* ===== 6. Education and Project Text ===== */
+strong {
+    color: #243e70;
+}
+
+ul {
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+li {
+    padding: 5px 0;
+    color: #405577;
+}
+
+/* ===== 7. Glass Highlight on Hover ===== */
+a {
+    color: #315fca;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #7547d8;
+    text-decoration: underline;
+}
+
+/* ===== 8. Footer ===== */
+footer {
+    text-align: center;
+    color: #49658f;
+    font-size: 14px;
+}
+
+/* ===== 9. Responsive Mobile Design ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    header,
+    section,
+    footer {
+        padding: 20px;
+        margin: 15px auto;
+        border-radius: 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    section h2 {
+        font-size: 21px;
+    }
+}
+
+/* ===== 10. Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
