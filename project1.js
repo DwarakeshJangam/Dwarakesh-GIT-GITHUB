@@ -145,7 +145,7 @@ themeBtn.addEventListener("click", function () {
    4. Typing Animation
 ================================== */
 
-const role = document.querySelector("header p");
+const role = document.getElementById("typing-text");
 
 if (role) {
     const originalText = role.textContent;

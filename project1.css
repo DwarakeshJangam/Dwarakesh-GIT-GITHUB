@@ -157,3 +157,178 @@ footer {
         animation: none !important;
     }
 }
+
+/* Stylish Name */
+header h1 {
+    font-family: -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", sans-serif;
+
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.2;
+
+    /* Gradient text */
+    background: linear-gradient(
+        110deg,
+        #2449a8,
+        #7655e8,
+        #d16ba5,
+        #2449a8
+    );
+
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Stylish animation */
+    animation: nameGradient 6s ease-in-out infinite,
+               nameAppear 1s ease-out both;
+
+    transition: letter-spacing 0.3s ease;
+}
+
+/* Moving gradient */
+@keyframes nameGradient {
+    0% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+}
+
+/* Smooth entrance */
+@keyframes nameAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effect */
+header h1:hover {
+    letter-spacing: -1px;
+}
+
+/* Dark mode support */
+body.dark-mode header h1 {
+    background: linear-gradient(
+        110deg,
+        #a8c7ff,
+        #c5a7ff,
+        #ffb8df,
+        #a8c7ff
+    );
+
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    header h1 {
+        animation: none;
+    }
+}
+
+/* ===== Profile Photo ===== */
+
+.profile-photo {
+    width: 155px;
+    height: 155px;
+    margin: 0 auto 22px;
+    padding: 4px;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #4f8cff,
+        #a779ff,
+        #f2a5d7
+    );
+
+    box-shadow:
+        0 8px 25px rgba(83, 105, 220, 0.25),
+        0 0 0 6px rgba(255, 255, 255, 0.22);
+
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.profile-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Subtle hover effect */
+.profile-photo:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 12px 35px rgba(83, 105, 220, 0.35),
+        0 0 0 8px rgba(255, 255, 255, 0.25);
+}
+
+/* Photo size on smaller screens */
+@media (max-width: 600px) {
+    .profile-photo {
+        width: 125px;
+        height: 125px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .profile-photo {
+        transition: none;
+    }
+}
+
+/* Contact links */
+.contact-links {
+    margin-top: 15px;
+    line-height: 2;
+    overflow-wrap: anywhere;
+}
+
+.contact-links a {
+    color: #315fca;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.contact-links a:hover {
+    color: #8655df;
+    text-decoration: underline;
+}
+
+/* Click effect */
+.contact-links a:active {
+    opacity: 0.7;
+}
+
+/* Dark mode */
+body.dark-mode .contact-links a {
+    color: #a8c7ff;
+}
